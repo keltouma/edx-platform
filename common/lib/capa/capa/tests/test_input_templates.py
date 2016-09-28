@@ -1211,5 +1211,4 @@ class CodeinputTemplateTest(TemplateTestCase):
         """
         Verify question label is rendered correctly.
         """
-        xml = self.render_to_xml(self.context)
-        self.assert_has_xpath(xml, "//label[@class='problem-group-label']", self.RESPONSE_DATA['label'])
+        self.assert_label(xpath="//label[@class='problem-group-label']")
