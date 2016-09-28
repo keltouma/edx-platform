@@ -1,3 +1,5 @@
+# pylint: disable=missing-docstring
+
 from datetime import datetime, timedelta
 
 import factory
@@ -11,7 +13,7 @@ from student.tests.factories import UserFactory
 
 
 class ApplicationFactory(DjangoModelFactory):
-    class Meta:
+    class Meta(object):
         model = Application
 
     user = factory.SubFactory(UserFactory)
@@ -22,7 +24,7 @@ class ApplicationFactory(DjangoModelFactory):
 
 
 class AccessTokenFactory(DjangoModelFactory):
-    class Meta:
+    class Meta(object):
         model = AccessToken
         django_get_or_create = ('user', 'application')
 
@@ -31,7 +33,7 @@ class AccessTokenFactory(DjangoModelFactory):
 
 
 class RefreshTokenFactory(DjangoModelFactory):
-    class Meta:
+    class Meta(object):
         model = RefreshToken
         django_get_or_create = ('user', 'application')
 
